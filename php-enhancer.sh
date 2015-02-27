@@ -46,7 +46,7 @@ make install
 
 cd ../php-5.5.14/ext/gd
 phpize
-./configure
+./configure --with-jpeg-dir=/usr/local
 make
 make install
 
