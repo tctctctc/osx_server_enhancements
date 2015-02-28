@@ -7,9 +7,9 @@ tar -xzf jpegsrc.v6b.tar.gz
 tar -xzf libgd-GD_2_0_33.tar.gz
 tar -xzf libmcrypt-2.5.8.tar.gz
 tar -xzf libpng-1.6.16.tar.gz
-tar -xzf php-5.5.14.tar.gz
+tar -xzf php-5.4.38.tar.gz
 
-cd php-5.5.14
+cd php-5.4.38
 ./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--with-apxs2=/usr/sbin/apxs' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/var/mysql/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'
 make
 make install
@@ -44,7 +44,7 @@ cd ../libpng-1.6.16
 make
 make install
 
-cd ../php-5.5.14/ext/gd
+cd ../php-5.4.38/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local
 make
