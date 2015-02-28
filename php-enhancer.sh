@@ -35,7 +35,7 @@ make
 make install
 
 cd ../jpeg-6b
-./configure --enable-shared
+./configure --enable-shared --enable-static
 ln -s /usr/local/bin/libtool libtool
 make clean
 make
