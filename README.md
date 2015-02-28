@@ -1,4 +1,4 @@
-# MAC OS X Web Server/PHP enhancement - PHP 5.5.14
+# MAC OS X Web Server/PHP enhancement - PHP 5.3.29
 
 There are a lot of opinions with regard to how to get various types of open source web server and applications programming software working with OS X. A lot of these center around installing a package management service such as Homebrew or MacPorts. While this may be the way some folks wish to go, I am not very big on using these as they introduce unnecessary dependencies, applications and libraries that are not necessary in the day to day operation of your web server. My opinion is that you still have configuration you need to do even when using Homebrew or MacPorts and the systems themselves need maintenance and a degree of know how.
 
@@ -14,7 +14,7 @@ Make mcrypt work with the installed PHP (VERY important and almost a deal breake
 
 To do all of this, we have to over-write the base install of PHP on Mac OS X. I am starting from a base install of Mac OS 10.10 (Yoesmite) running Mac OS X Server version 4.04. The provided version of PHP with this set up is 5.5.14.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
-php-5.5.14
+php-5.3.29
 
 libtool-2.4.6
 
