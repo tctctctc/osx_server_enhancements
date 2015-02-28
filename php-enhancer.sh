@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd packages
+tar -xzf libtool-2.4.6.tar.gz
 tar -xzf autoconf-2.69.tar.gz
 tar -xzf freetype-2.5.5.tar.gz
 tar -xzf jpegsrc.v6b.tar.gz
@@ -14,51 +15,66 @@ cd php-5.4.38
 make
 make install
 
+cd ../libtool-2.4.6
+./configure
+make clean
+make
+make install
+
 cd ../autoconf-2.69
 ./configure
+make clean
 make
 make install
 
 cd ../freetype-2.5.5
 ./configure --enable-shared
+make clean
 make
 make install
 
 cd ../jpeg-6b
 ./configure --enable-shared
+make clean
 make
 make install
 
 cd ../libgd-GD_2_0_33
 ./configure --enable-shared
+make clean
 make
 make install
 
 cd ../libmcrypt-2.5.8
 ./configure --enable-shared
+make clean
 make
 make install
 
 cd ../libpng-1.6.16
 ./configure --enable-shared
+make clean
 make
 make install
 
 cd ../php-5.4.38/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local
+make clean
 make
 make install
 
 cd ../mcrypt
 phpize
 ./configure
+make clean
 make
 make install
 
 cd ../pcntl
 phpize
 ./configure
+make clean
 make
 make install
 
