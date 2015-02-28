@@ -35,6 +35,7 @@ make install
 
 cd ../jpeg-6b
 ./configure --enable-shared
+ln -s /usr/local/bin/libtool libtool
 make clean
 make
 make install
