@@ -56,7 +56,8 @@ sudo ./configure --prefix=/usr \
 --with-xmlrpc \
 --with-iconv-dir=/usr \
 --with-xsl=/usr \
---enable-zip
+--enable-zip \
+--enable-shared
 
 make
 make install
