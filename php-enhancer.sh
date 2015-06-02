@@ -29,7 +29,7 @@ make clean
 make
 make install
 
-cd ../icu4c-4-8-1
+cd ../icu4c-4-8-1/source
 ./configure
 make clean
 make
