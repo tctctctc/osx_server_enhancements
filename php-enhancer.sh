@@ -35,7 +35,7 @@ make clean
 make
 make install
 
-cd ../freetype-2.5.5
+cd ../../freetype-2.5.5
 ./configure --enable-shared
 make clean
 make
