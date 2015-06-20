@@ -17,17 +17,17 @@ Make mcrypt work with the installed PHP (VERY important and almost a deal breake
 To do all of this, we have to over-write the base install of PHP on Mac OS X. I am starting from a base install of Mac OS 10.10.3 (Yoesmite) running Mac OS X Server version 4.04. The provided version of PHP with this set up is 5.5.20.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
 php-5.5.24  
-libtool-2.4.6
-icu4c-4-8-1
-autoconf-2.69
-jpeg-6b
-libgd-GD-2_0_33
-libmcrypt-2.5.8
-libpng-1-6-16
-freetype-2.5.5
-ffmpeg-2.5.3
-yasm-1.3.0
-
+libtool-2.4.6  
+icu4c-4-8-1  
+autoconf-2.69  
+jpeg-6b  
+libgd-GD-2_0_33  
+libmcrypt-2.5.8  
+libpng-1-6-16  
+freetype-2.5.5  
+ffmpeg-2.5.3  
+yasm-1.3.0  
+  
 You will need to be sure you have XCode's Command Line Tools installed. This does come with the XCode app, but this package is not yet built against those, but rather the stand alone command line tools package available by either downloading from the Developers portal or by dropping to the command line and typing 'git' and hitting return (this will try to run git, triggering an install of the command line tools for Mac OS X).
 
 This repository provides these packages and an installer. The goal is to update the GD extension inside of PHP to support jpeg, gif, and png images along with freetype as a shared object (extension) to PHP as opposed to being compiled. It is also to provide mcrypt which is not provided by default as well as the pcntl extension for multi-threading. Additional modules could be added to this if desired, but these three were the ones most mission critical to my rationale behind creating this repository.
