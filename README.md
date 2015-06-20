@@ -1,4 +1,6 @@
-# MAC OS X Web Server/PHP enhancement - PHP 5.5.20 (Mac OS X 10.10.3)
+# MAC OS X Web Server/PHP enhancement - PHP 5.5.24 (Mac OS X 10.11.0 - Developer Preview 1)
+
+Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.
 
 There are a lot of opinions with regard to how to get various types of open source web server and applications programming software working with OS X. A lot of these center around installing a package management service such as Homebrew or MacPorts. While this may be the way some folks wish to go, I am not very big on using these as they introduce unnecessary dependencies, applications and libraries that are not necessary in the day to day operation of your web server. My opinion is that you still have configuration you need to do even when using Homebrew or MacPorts and the systems themselves need maintenance and a degree of know how.
 
@@ -14,24 +16,17 @@ Make mcrypt work with the installed PHP (VERY important and almost a deal breake
 
 To do all of this, we have to over-write the base install of PHP on Mac OS X. I am starting from a base install of Mac OS 10.10.3 (Yoesmite) running Mac OS X Server version 4.04. The provided version of PHP with this set up is 5.5.20.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
-php-5.5.20
-
+php-5.5.24  
 libtool-2.4.6
-
 icu4c-4-8-1
-
 autoconf-2.69
-
 jpeg-6b
-
 libgd-GD-2_0_33
-
 libmcrypt-2.5.8
-
 libpng-1-6-16
-
 freetype-2.5.5
-
+ffmpeg-2.5.3
+yasm-1.3.0
 
 You will need to be sure you have XCode's Command Line Tools installed. This does come with the XCode app, but this package is not yet built against those, but rather the stand alone command line tools package available by either downloading from the Developers portal or by dropping to the command line and typing 'git' and hitting return (this will try to run git, triggering an install of the command line tools for Mac OS X).
 
