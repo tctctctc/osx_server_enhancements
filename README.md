@@ -1,6 +1,8 @@
 # MAC OS X Web Server/PHP enhancement - PHP 5.5.24 (Mac OS X 10.11.0 - Developer Preview 1)
 
-Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.
+Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
+
+Also of note is that to install this you will need to disable SIP in El Capitain. This is a new feature that prevents the modification of system paths. To do this, boot to your restore image and go to the Utilities menu. Select the Security option and uncheck the box and reboot. Then things will install.
 
 There are a lot of opinions with regard to how to get various types of open source web server and applications programming software working with OS X. A lot of these center around installing a package management service such as Homebrew or MacPorts. While this may be the way some folks wish to go, I am not very big on using these as they introduce unnecessary dependencies, applications and libraries that are not necessary in the day to day operation of your web server. My opinion is that you still have configuration you need to do even when using Homebrew or MacPorts and the systems themselves need maintenance and a degree of know how.
 
@@ -8,13 +10,13 @@ My preferred method is to get down and dirty with installing things that need to
 
 Building additional components for your OS X web server can be pretty simple if you are comfortable around a command line and following a few instructions. This involves just a few more commands than it would take to run a package manager and gives you a lot more control while at the same time understanding a bit more about how your software works.
 
-In my example, I need to accomplish a few basic tasks:
+In my example, I need to accomplish a few basic tasks:  
 
-Remove the compiled-in GD installation on Mac OS X’s PHP installation as it does not support the creation of png files which is a must have.
-Add the PHP multi-threaded pcntl extension to the command line for processing command line scripts properly programmed to use multi-threaded processes.
-Make mcrypt work with the installed PHP (VERY important and almost a deal breaker to running a secure web server on Mac OS X).
+Add the PHP multi-threaded pcntl extension to the command line for processing command line scripts properly programmed to use multi-threaded processes.  
 
-To do all of this, we have to over-write the base install of PHP on Mac OS X. I am starting from a base install of Mac OS 10.10.3 (Yoesmite) running Mac OS X Server version 4.04. The provided version of PHP with this set up is 5.5.20.. Here are the software packages and versions I have downloaded to accomplish these tasks:
+Make mcrypt work with the installed PHP (VERY important and almost a deal breaker to running a secure web server on Mac OS X).  
+
+To do all of this, we have to over-write the base install of PHP on Mac OS X. I am starting from a base install of Mac OS 10.11.0 Developer Preview 1 (El Captain) running Mac OS X Server version 5. The provided version of PHP with this set up is 5.5.24.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
 php-5.5.24  
 libtool-2.4.6  
@@ -27,6 +29,7 @@ libpng-1-6-16
 freetype-2.5.5  
 ffmpeg-2.5.3  
 yasm-1.3.0  
+openssl-0.9.8zg
   
 You will need to be sure you have XCode's Command Line Tools installed. This does come with the XCode app, but this package is not yet built against those, but rather the stand alone command line tools package available by either downloading from the Developers portal or by dropping to the command line and typing 'git' and hitting return (this will try to run git, triggering an install of the command line tools for Mac OS X).
 
