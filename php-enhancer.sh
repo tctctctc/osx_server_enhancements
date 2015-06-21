@@ -13,11 +13,12 @@ tar -xzf php-5.5.24.tar.gz
 tar -xzf icu4c-4-8-1.tgz 
 
 cd openssl-0.9.8zg
-./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3
-cd php-5.5.24
-./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/private/etc' '--with-libdir=lib' '--enable-cli' '--with-iconv=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.Internal.sdk/usr' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.Internal.sdk/usr' '--with-openssl=/usr/local
+./Configure --openssldir=/usr/local/ssl darwin64-x86_64-cc no-ssl2 no-ssl3 enable-sha
+make
+make install
 
-./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/var/mysql/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'
+cd ../php-5.5.24
+./configure '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-fpm' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'
 make clean
 make
 make install
@@ -53,32 +54,26 @@ make clean
 make
 make install
 
-cd ../libgd-GD_2_0_33
-./configure --enable-shared
-make clean
-make
-make install
-
 cd ../libmcrypt-2.5.8
 ./configure --enable-shared
 make clean
 make
 make install
 
-cd ../libpng-1.6.16
+cd ../libgd-GD_2_0_33
 ./configure --enable-shared
 make clean
 make
 make install
 
-cd ../php-5.5.20/ext/gd
+cd ../php-5.5.24/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local
 make clean
 make
 make install
 
-cd ../mcrypt
+cd ../ext/mcrypt
 phpize
 ./configure
 make clean
@@ -98,6 +93,7 @@ phpize
 make clean
 make
 make install
+
 
 echo "" >> /etc/php.ini
 echo "extension=gd.so" >> /etc/php.ini
