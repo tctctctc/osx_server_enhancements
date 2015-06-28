@@ -61,6 +61,12 @@ make clean
 make
 make install
 
+cd ../libpng-1.6.16
+./configure --enable-shared
+make clean
+make
+make install
+
 cd ../libgd-GD_2_0_33
 ./configure --enable-shared
 make clean

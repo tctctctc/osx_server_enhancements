@@ -1,4 +1,4 @@
-# MAC OS X Web Server/PHP enhancement - PHP 5.5.24 (Mac OS X 10.11.0 - Developer Preview 1)
+# MAC OS X Web Server/PHP enhancement - PHP 5.5.24 (Mac OS X 10.11.0 - Developer Preview 2)
 
 Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
 
