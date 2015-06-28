@@ -50,6 +50,7 @@ make install
 cd ../jpeg-6b
 ./configure --enable-shared --enable-static
 ln -s /usr/local/bin/libtool libtool
+mkdir -p /usr/local/man/man1
 make clean
 make
 make install
