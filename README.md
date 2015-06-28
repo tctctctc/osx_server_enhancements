@@ -1,8 +1,4 @@
-# MAC OS X Web Server/PHP enhancement - PHP 5.5.24 (Mac OS X 10.11.0 - Developer Preview 2)
-
-Note: LibPNG has had PNG support re-added to it's general release, however with mcrypt still missing and a couple of other packages that I use, I am going to continue to support these enhancements until such time as they are included.  
-
-Also of note is that to install this you will need to disable SIP in El Capitain. This is a new feature that prevents the modification of system paths. To do this, boot to your restore image and go to the Utilities menu. Select the Security option and uncheck the box and reboot. Then things will install.
+# MAC OS X Web Server/PHP enhancement - PHP 5.5.24 (Mac OS X 10.10.4)
 
 There are a lot of opinions with regard to how to get various types of open source web server and applications programming software working with OS X. A lot of these center around installing a package management service such as Homebrew or MacPorts. While this may be the way some folks wish to go, I am not very big on using these as they introduce unnecessary dependencies, applications and libraries that are not necessary in the day to day operation of your web server. My opinion is that you still have configuration you need to do even when using Homebrew or MacPorts and the systems themselves need maintenance and a degree of know how.
 
