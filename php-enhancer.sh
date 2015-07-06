@@ -67,13 +67,13 @@ make clean
 make
 make install
 
-cd ../libgd-GD_2_0_33
+cd ../libgd-GD_2_0_33/src
 ./configure --enable-shared
 make clean
 make
 make install
 
-cd ../php-5.5.24/ext/gd
+cd ../../php-5.5.24/ext/gd
 phpize
 ./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/usr/local
 make clean
