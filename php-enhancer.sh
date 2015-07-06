@@ -80,7 +80,7 @@ make clean
 make
 make install
 
-cd ../ext/mcrypt
+cd ../mcrypt
 phpize
 ./configure
 make clean
