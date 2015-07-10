@@ -81,6 +81,13 @@ make clean
 make
 make install
 
+cd ../intl
+phpize
+./configure
+make clean
+make
+make install
+
 echo "" >> /etc/php.ini
 echo "extension=gd.so" >> /etc/php.ini
 echo "extension=mcrypt.so" >> /etc/php.ini
