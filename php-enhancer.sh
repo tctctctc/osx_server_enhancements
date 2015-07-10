@@ -1,66 +1,22 @@
 #!/bin/bash
 
 cd packages
-tar -xzf libtool-2.4.6.tar.gz
+tar -xzf openssl-0.9.8zg.tar.gz
 tar -xzf autoconf-2.69.tar.gz
+tar -xzf libtool-2.4.6.tar.gz
 tar -xzf freetype-2.5.5.tar.gz
 tar -xzf jpegsrc.v6b.tar.gz
 tar -xzf libgd-GD_2_0_33.tar.gz
 tar -xzf libmcrypt-2.5.8.tar.gz
 tar -xzf libpng-1.6.16.tar.gz
+tar -xzf icu4c-4-8-1.tgz 
 tar -xzf php-5.3.29.tar.gz
 
 cd php-5.3.29
-sudo ./configure --prefix=/usr \
---mandir=/usr/share/man \
---infodir=/usr/share/info \
---sysconfdir=/private/etc \
---with-apxs2=/usr/sbin/apxs \
---enable-cli \
---with-config-file-path=/etc \
---with-config-file-scan-dir=/Library/Server/Web/Config/php \
---with-libxml-dir=/usr \
---with-openssl=/usr \
---with-kerberos=/usr \
---with-zlib=/usr \
---enable-bcmath \
---with-bz2=/usr \
---enable-calendar \
---disable-cgi \
---with-curl=/usr \
---enable-dba \
---with-ndbm=/usr \
---enable-exif \
---enable-ftp \
---with-ldap=/usr \
---with-ldap-sasl=/usr \
---with-libedit=/usr \
---enable-mbstring \
---enable-mbregex \
---with-mysql=mysqlnd \
---with-mysqli=mysqlnd \
---without-pear \
---with-pear=no \
---with-pdo-mysql=mysqlnd \
---with-mysql-sock=/var/mysql/mysql.sock \
---with-readline=/usr \
---enable-shmop \
---with-snmp=/usr \
---enable-soap \
---enable-sockets \
---enable-sysvmsg \
---enable-sysvsem \
---enable-sysvshm \
---with-tidy \
---enable-wddx \
---with-xmlrpc \
---with-iconv-dir=/usr \
---with-xsl=/usr \
---enable-zip \
---enable-shared
-
+./configure '--with-apxs2=/usr/sbin/apxs' '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--sysconfdir=/private/etc' '--enable-cli' '--with-config-file-path=/etc' '--with-config-file-scan-dir=/Library/Server/Web/Config/php' '--with-libxml-dir=/usr' '--with-openssl=/usr/local/ssl' '--with-kerberos=/usr' '--with-zlib=/usr' '--enable-bcmath' '--with-bz2=/usr' '--enable-calendar' '--disable-cgi' '--with-curl=/usr' '--enable-dba' '--with-ndbm=/usr' '--enable-exif' '--enable-ftp' '--with-icu-dir=/usr' '--with-ldap=/usr' '--with-ldap-sasl=/usr' '--with-libedit=/usr' '--enable-mbstring' '--enable-mbregex' '--with-mysql=mysqlnd' '--with-mysqli=mysqlnd' '--without-pear' '--with-pear=no' '--with-pdo-mysql=mysqlnd' '--with-mysql-sock=/tmp/mysql.sock' '--with-readline=/usr' '--enable-shmop' '--with-snmp=/usr' '--enable-soap' '--enable-sockets' '--enable-sysvmsg' '--enable-sysvsem' '--enable-sysvshm' '--with-tidy' '--enable-wddx' '--with-xmlrpc' '--with-iconv-dir=/usr' '--with-xsl=/usr' '--enable-zip'
 make
 make install
+mv /usr/bin/php.dSYM php
 
 cd ../libtool-2.4.6
 ./configure
@@ -86,13 +42,13 @@ make clean
 make
 make install
 
-cd ../libgd-GD_2_0_33
+cd ../libgd-GD_2_0_33/src
 ./configure --enable-shared
 make clean
 make
 make install
 
-cd ../libmcrypt-2.5.8
+cd ../../libmcrypt-2.5.8
 ./configure --enable-shared
 make clean
 make
@@ -129,5 +85,5 @@ echo "" >> /etc/php.ini
 echo "extension=gd.so" >> /etc/php.ini
 echo "extension=mcrypt.so" >> /etc/php.ini
 echo "extension=pcntl.so" >> /etc/php.ini
+echo "extension=intl.so" >> /etc/php.ini
 echo "" >> /etc/php.ini
-
