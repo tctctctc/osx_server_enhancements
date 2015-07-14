@@ -52,47 +52,50 @@ make clean
 make
 make install
 
+echo "Building jpeg-6b"
 cd ../jpeg-6b
-./configure --enable-shared --enable-static
-ln -s /usr/local/bin/libtool libtool
-mkdir -p /usr/local/man/man1
-make clean
-make
-make install
+./configure --enable-shared --enable-static > /dev/null 2>&1
+ln -s /usr/local/bin/libtool libtool > /dev/null 2>&1
+mkdir -p /usr/local/man/man1 > /dev/null 2>&1
+make clean > /dev/null 2>&1
+make > /dev/null 2>&1
+make install > /dev/null 2>&1
 
+echo "Building libmcript"
 cd ../libmcrypt-2.5.8
-./configure --enable-shared
-make clean
-make
-make install
+./configure --enable-shared > /dev/null 2>&1
+make clean > /dev/null 2>&1
+make > /dev/null 2>&1
+make install > /dev/null 2>&1
 
+echo "Building PHP Extensions"
 cd ../php-5.5.24/ext/gd
-phpize
-./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr
-make clean
-make
-make install
+phpize > /dev/null 2>&1
+./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr > /dev/null 2>&1
+make clean > > /dev/null 2>&1
+make > /dev/null 2>&1
+make install > /dev/null 2>&1
 
 cd ../mcrypt
-phpize
-./configure
-make clean
-make
-make install
+phpize > /dev/null 2>&1
+./configure > /dev/null 2>&1
+make clean > /dev/null 2>&1
+make > /dev/null 2>&1
+make install > /dev/null 2>&1
 
 cd ../pcntl
-phpize
-./configure
-make clean
-make
-make install
+phpize > /dev/null 2>&1
+./configure > /dev/null 2>&1
+make clean > /dev/null 2>&1
+make > /dev/null 2>&1
+make install > /dev/null 2>&1
 
 cd ../intl
-phpize
-./configure
-make clean
-make
-make install
+phpize > /dev/null 2>&1
+./configure > /dev/null 2>&1
+make clean > /dev/null 2>&1
+make > /dev/null 2>&1
+make install > /dev/null 2>&1
 
 
 echo "" >> /etc/php.ini
