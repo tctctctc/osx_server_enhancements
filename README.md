@@ -14,7 +14,7 @@ Make mcrypt work with the installed PHP (VERY important and almost a deal breake
 
 To do all of this, we have to over-write the base install of PHP on Mac OS X. I am starting from an updated install of Mac OS 10.10.4 Developer running Mac OS X Server version 4. The provided version of PHP with this set up is 5.5.24.. Here are the software packages and versions I have downloaded to accomplish these tasks:
 
-php-5.5.24  
+php-5.5.27  
 libtool-2.4.6  
 icu4c-4-8-1  
 autoconf-2.69  
