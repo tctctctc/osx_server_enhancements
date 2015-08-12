@@ -72,7 +72,7 @@ echo "Building PHP Extensions"
 cd ../php-5.5.24/ext/gd
 phpize > /dev/null 2>&1
 ./configure --with-jpeg-dir=/usr/local --with-freetype-dir=/usr/local --with-png-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/usr > /dev/null 2>&1
-make clean > > /dev/null 2>&1
+make clean > /dev/null 2>&1
 make > /dev/null 2>&1
 make install > /dev/null 2>&1
 
